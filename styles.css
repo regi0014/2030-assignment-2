@@ -1,0 +1,131 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fecb00;
+    color: #555;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    justify-content: space-around;
+}
+
+nav li:hover {
+    /* background-color: #fff; */
+    color: #bab4b4
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.signup, .login {
+    background-color: #ff5733;
+    color: #555;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup:hover, .login:hover{
+   color: #fff;
+}
+
+/* Centered section styles */
+.centered {
+    text-align: center;
+    height: 30vh;
+    padding: 100px 0;
+    background-image: url('./img/landing-image.jpg');
+    background-repeat: no-repeat;
+    /* https://www.freepik.com/free-photo/medium-shot-woman-man-road-trip_12349031.htm#query=happy%20driviing&position=29&from_view=search&track=ais */
+    background-size: cover;
+    color: #fff;
+    
+}
+
+.centered h1 {
+    font-size: 3em;
+}
+
+.slogan {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+/* Features section styles */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.feature-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 200px;
+}
+
+.feature-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* About.html Section  */
+.about-section {
+    display: inline-block;
+    justify-content: space-around;
+    padding: 40px 0 40px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.about-section p {
+    padding: 10px 20%;
+    
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #fecb00;
+    color: #555;
+}
