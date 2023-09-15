@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styless.css">
+	<title>Log History</title>
+</head>
+<body>
+    <div class="log-history">
+        <h1>Log History</h1>
+        <div class="filter">
+            <label for="status">Status:</label>
+            <select id="status">
+                <option value="all">All</option>
+                <option value="in_progress">In Progress</option>
+                <option value="completed">Completed</option>
+                <option value="canceled">Canceled</option>
+            </select>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Instructor Name</th>
+                    <th>Status</th>
+                    <th>Duration</th>
+                    <th>Date Created</th>
+                    <th>Last Update</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows should go here -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <ul>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
