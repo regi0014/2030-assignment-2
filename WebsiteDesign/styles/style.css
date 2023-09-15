@@ -1,0 +1,146 @@
+.grey-bar {
+    background-color: #FFFF00;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.bottom-bar {
+    background-color: #FFFF00;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #FFFF00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 800px;
+}
+
+.signup {
+    background-color: #FFA500;
+    margin-right: 20px;
+    color: #fff;
+    margin-left: 100px;
+}
+
+.login {
+    background-color: #FFA500;
+    color: #000;
+    margin-right: 10px;
+}
+
+.middle-text {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 70px;
+}
+
+.additional-text {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-right: 300px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.form-column {
+    width: 45%;
+    padding: 10px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.input-field, .select-field {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.next-button {
+    text-align: right;
+    margin-top: -20px;
+    margin-right: 100px;
+}
+
+.address-field {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+.checkboxes {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bottom-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+.logo {
+    margin-left: 20px; 
+    font-size: 24px; 
+    color: #000; 
+}
+
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+
+.centered-text {
+    text-align: center;
+    margin-top: 10px; 
+}
+
+.input-container input[type="text"],
+.input-container input[type="number"] {
+    width: 33%; 
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.centered-buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+

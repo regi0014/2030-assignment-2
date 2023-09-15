@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+<body>
+    <div class="grey-bar">
+        <span class="logo">TLDR</span> 
+        <button class="button">About Us</button>
+        <a href="#" class="bottom-link">Contact Us</a>
+
+        <button class="button signup">Sign Up</button>
+        <button class="button login">Log In</button>
+    </div>
+
+    <div class="middle-text">
+        Create your Profile
+    </div>
+
+    <div class="form-container">
+        <div class="form-column">
+            <form>
+                <div>
+                    <label class="form-label" for="firstName">First Name:</label>
+                    <input class="input-field" type="text" id="firstName" name="firstName">
+                </div>
+                <div>
+                    <label class="form-label" for="email">Email:</label>
+                    <input class="input-field" type="email" id="email" name="email">
+                </div>
+                <div>
+                    <label class="form-label" for="password">Password:</label>
+                    <input class="input-field" type="password" id="password" name="password">
+                </div>
+                <div>
+                    <label class="form-label" for="state">State:</label>
+                    <select class="select-field" id="state" name="state">
+                        <option value="NSW">New South Wales</option>
+                        <option value="VIC">Victoria</option>
+                        <option value="QLD">Queensland</option>
+                        <option value="WA">Western Australia</option>
+                        <option value="SA">South Australia</option>
+                        <option value="TAS">Tasmania</option>
+                        <option value="ACT">Australian Capital Territory</option>
+                        <option value="NT">Northern Territory</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label" for="address">Address:</label>
+                    <input class="address-field" type="text" id="address" name="address">
+                </div>
+            </form>
+        </div>
+
+        <div class="form-column">
+            <form>
+                <div>
+                    <label class="form-label" for="surname">Surname:</label>
+                    <input class="input-field" type="text" id="surname" name="surname">
+                </div>
+                <div>
+                    <label class="form-label" for="dob">Date of Birth (MM-DD-YYYY):</label>
+                    <input class="input-field" type="text" id="dob" name="dob" placeholder="MM-DD-YYYY">
+                </div>
+                
+                <div>
+                    <label class="form-label" for="phone">Phone Number:</label>
+                    <input class="input-field" type="tel" id="phone" name="phone">
+                </div>
+                <div>
+                    <label class="form-label" for="license">Driver's License:</label>
+                    <input class="input-field" type="text" id="license" name="license">
+                </div>
+            </form>
+        </div>
+        
+    </div>
+ 
+
+<div class="checkboxes" style="text-align: center; margin-top: 20px;">
+    <label>
+        <input type="checkbox" name="agree" value="agree">
+        I agree to TLDR privacy, terms and conditions specified <a href="your_terms_and_conditions_url_here">here</a>.
+    </label>
+    <br>
+    <label>
+        <input type="checkbox" name="learner" value="learner">
+        I declare that I have a learner's license and passed the hazard perception test.
+    </label>
+</div>
+
+<div class="next-button">
+    <button class="button signup" style="padding: 20px 40px; font-size: 22px;">Next</button>
+</div>
+
+<div class="bottom-bar">
+    <a href="your_desired_url_here" class="bottom-link">2023 TLDR. All rights reserved</a>
+</div>
+
+</body>
+</html>
