@@ -1,0 +1,61 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS chat;
+DROP TABLE IF EXISTS log;
+DROP TABLE IF EXISTS payment;
+
+
+CREATE TABLE users (
+    name VARCHAR(255) PRIMARY KEY,
+    password VARCHAR(50) NOT NULL,
+    role VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone NUMERIC,
+    state VARCHAR(255) NOT NULL,
+    address NUMERIC NOT NULL,
+    license_no NUMERIC NOT NULL,
+    daydrive NUMERIC NULL DEFAULT 0,
+    nightdrive NUMERIC  NULL DEFAULT 0,
+);
+
+CREATE TABLE log (
+    log_no INTEGER NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    instructor VARCHAR(255) NOT NULL,
+    from_location VARCHAR(255) NOT NULL,
+    to_location VARCHAR(255) NOT NULL,
+    status VARCHAR(255) NOT NULL,
+    payment VARCHAR(255) NOT NULL,
+    PRIMARY KEY (log_no),
+    FOREIGN KEY (name) REFERENCES users (name),
+    FOREIGN KEY (instructor) REFERENCES users (name)
+);
+
+CREATE TABLE chat (
+    log_no INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    message VARCHAR(255) NOT NULL,
+    date_created DATETIME NOT NULL,
+    last_update TIMESTAMP,
+    instructor VARCHAR(255) NOT NULL,
+    FOREIGN KEY (name) REFERENCES users (name),
+    FOREIGN KEY (instructor) REFERENCES users (name),
+    FOREIGN KEY (log_no) REFERENCES log (log_no)
+);
+
+
+CREATE TABLE payment (
+    log_no INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    amount NUMERIC,
+    card_no NUMERIC NOT NULL,
+    card_type VARCHAR(255) NOT NULL,
+    payment_date NUMERIC,
+    PRIMARY KEY (log_no),
+    FOREIGN KEY (log_no) REFERENCES log (log_no),
+    FOREIGN KEY (name) REFERENCES users (name)
+);
+
+
+
+INSERT INTO users (name, password, role, email, phone, state, address, license_no, daydrive, nightdrive) VALUES ('admin', 'admin', 'admin', '
+INSERT INTO users (name, password, role, email, phone, state, address, license_no, daydrive, nightdrive) VALUES ('instructor', 'instructor', 'instructor', '
