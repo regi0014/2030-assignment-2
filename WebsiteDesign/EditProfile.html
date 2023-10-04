@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Profile</title>
+    <title>Update Profile</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+    </style>
 </head>
 <body>
+    <div class="dashboard">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="AboutUs.html">Home</a></li>
+            <li><a href="AboutUs.html">Payments</a></li>
+            <li><a href="AboutUs.html">Profile</a></li>
+            <li><a href="AboutUs.html">Questions</a></li>
+            <li><a href="AboutUs.html">Notifications</a></li>
+        </ul>
+    </div>
     <div class="grey-bar">
         <span class="logo">TLDR</span>
         <a href="AboutUs.html" class="button">AboutUs</a>
@@ -15,11 +27,11 @@
     </div>
 
     <div class="middle-text">
-        Create your Profile
+        Update your Profile
     </div>
     <div class="containerforinfo">
         <div class="columnthing">
-            <form id="profileForm" action="SOMEOTHERPAGE23.html" method="post">
+            <form id="profileForm" action="updatingtheuserprofile.php" method="post">
                 <div>
                     <label class="form-label" for="firstName">First Name:</label>
                     <input class="input-field" type="text" id="firstName" name="firstName" required>
@@ -42,7 +54,7 @@
                         <option value="SA">South Australia</option>
                         <option value="TAS">Tasmania</option>
                         <option value="ACT">Australian Capital Territory</option>
-                        <option value="NT">Northern Territory</option> 
+                        <option value="NT">Northern Territory</option>
                     </select>
                 </div>
                 <div>
@@ -68,7 +80,7 @@
                 </div>
                 <div>
                     <label class="form-label" for="license">License Number:</label>
-                    <input class="input-field" type="text" id="license" name="license" required> 
+                    <input class="input-field" type="text" id="license" name="license" required>
                 </div>
                 <div class="image-upload">
                     <label for="driverLicenseImage">Upload Driver's License Image:</label>
@@ -78,20 +90,22 @@
         </div>
     </div>
 
+    
+
     <div class="checkboxes" style="text-align: center; margin-top: 20px;">
         <label>
             <input type="checkbox" name="agree" value="agree" required>
             I agree to TLDR privacy, terms and conditions specified <a href="here.html">here</a>.
         </label>
         <br>
-        <label> 
+        <label>
             <input type="checkbox" name="learner" value="learner" required>
             I declare that I have a learner's license and passed the hazard perception test.
         </label>
     </div>
 
     <div class="next-button">
-        <button class="button signup" style="padding: 20px 40px; font-size: 22px;" onclick="validateAndSubmit()">Next</button>
+        <button class="button signup" style="padding: 20px 40px; font-size: 22px;" onclick="validateAndSubmit()">Update</button>
     </div>
 
     <div class="bottom-bar">
@@ -110,20 +124,10 @@
                 }
             }
 
-            const fileInput = document.getElementById('driverLicenseImage');
-            if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
-                allFieldsComplete = false;
-            }
-            const privacyCheckbox = document.querySelector('[name="agree"]');
-            const learnerCheckbox = document.querySelector('[name="learner"]');
-            if (!privacyCheckbox.checked || !learnerCheckbox.checked) {
-                allFieldsComplete = false;
-            }
-
             if (allFieldsComplete) {
                 document.getElementById('profileForm').submit();
             } else {
-                alert('Please fill in all required fields, upload a drivers license image, and check both checkboxes.');
+                alert('Please fill in all required fields.');
             }
         }
     </script>

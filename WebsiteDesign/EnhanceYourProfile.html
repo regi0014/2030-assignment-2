@@ -3,36 +3,48 @@
 <head>
     <title>Enhance Your Profile</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+    </style>
 </head>
 <body>
-    <div class="grey-bar">
-        <button class="button">About Us</button>
-        <a href="#" class="bottom-link">Contact Us</a>
+    <div class="dashboard">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="AboutUs.html">Home</a></li>
+            <li><a href="AboutUs.html">Payments</a></li>
+            <li><a href="AboutUs.html">Profile</a></li>
+            <li><a href="AboutUs.html">Questions</a></li>
+            <li><a href="AboutUs.html">Notifications</a></li>
 
-        <button class="button signup">Sign Up</button>
-        <button class="button login">Log In</button>
+        </ul>
+    </div>
+    <div class="grey-bar">
+        <span class="logo">TLDR</span> 
+        <a href="AboutUs.html" class="button">AboutUs</a>
+        <a href="ContactUs.html" class="bottom-link">ContactUs</a>
+
+        <a href="signup.html" class="button signup">SignUp</a>
+        <a href="login.html" class="button login">LogIn</a>
     </div>
 
     <div class="middle-text">
         Enhance your Profile
     </div>
 
-
-    
     <br>
     <br>
     <div class="additional-content">
-        <div class="centered-text" style="font-size: 20px;">
+        <div class="middleTextthing" style="font-size: 20px;">
             <p>Please enter your previous logs total:</p>
         </div>
-    
-        <div class="centered-text">
+
+        <div class="middleTextthing">
             <p>Total day time minutes driven (count in mins):</p>
         </div>
         <div class="input-container">
             <input class="input-field" type="number" id="dayTimeMinutes" name="dayTimeMinutes">
         </div>
-        <div class="centered-text">
+        <div class="middleTextthing">
             <p>Total night time minutes driven (count in mins):</p>
         </div>
         <div class="input-container">
@@ -41,30 +53,64 @@
     </div>
 
     <div class="centered-buttons">
-        <button class="button signup" style="margin-right: 10px;">Create Account</button>
-        <button class="button login" style="margin-right: 120px;">Remind me later</button>
+        <button class="button signup" style="margin-right: 10px;" onclick="createAccount()">Create Account</button>
+        <button class="button login" style="margin-right: 40px;" onclick="remindMeLater()">Remind me later</button>
     </div>
-</div>
 
-<br>
-<br>
-<br> 
-<br>
-<div class="checkboxes">
-    <label>
-        <input type="checkbox" name="agree" value="agree">
-        I agree to TLDR privacy, terms and conditions specified <a href="your_terms_and_conditions_url_here">here</a>.
-    </label>
     <br>
-    <label>
-        <input type="checkbox" name="learner" value="learner">
-        I declare that I have a learner's license and passed the hazard perception test.
-    </label>
-</div>
+    <br>
+    <div class="reminder" id="reminderMessage" style="display: none;">
+        Please check both checkboxes to continue.
+    </div>
+    <div class="checkboxes">
+        <label>
+            <input type="checkbox" id="agreeCheckbox" name="agree" value="agree" onchange="updateButtonsState()">
+            I agree to TLDR privacy, terms and conditions specified <a href="here.html">here</a>.
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" id="learnerCheckbox" name="learner" value="learner" onchange="updateButtonsState()">
+            I declare that I have a learner's license and passed the hazard perception test.
+        </label>
+    </div>
 
-<div class="bottom-bar">
-    <a href="your_desired_url_here" class="bottom-link">2023 TLDR. All rights reserved</a>
-</div>
 
+    <div class="bottom-bar">
+        <a href="TLDR2023.html" class="bottom-link">2023 TLDR. All rights reserved</a>
+    </div>
+
+    <script>
+        function updateButtonsState() {
+            const agreeCheckbox = document.getElementById('agreeCheckbox');
+            const learnerCheckbox = document.getElementById('learnerCheckbox');
+            const createAccountButton = document.querySelector('.button.signup');
+            const remindMeLaterButton = document.querySelector('.button.login');
+            const reminderMessage = document.getElementById('reminderMessage');
+
+            if (agreeCheckbox.checked && learnerCheckbox.checked) {
+                createAccountButton.disabled = false;
+                remindMeLaterButton.disabled = false;
+                reminderMessage.style.display = 'none';
+            } else {
+                createAccountButton.disabled = true;
+                remindMeLaterButton.disabled = true;
+                reminderMessage.style.display = 'block'; 
+            }
+        }
+
+        function createAccount() {
+            if (!document.querySelector('.button.signup').disabled) {
+                window.location.href = 'SOMEOTHERPAGE.html';
+            }
+        }
+
+        function remindMeLater() {
+            if (!document.querySelector('.button.login').disabled) {
+                window.location.href = 'SOMEOTHERPAGE.html';
+            }
+        }
+
+        updateButtonsState();
+    </script>
 </body>
 </html>

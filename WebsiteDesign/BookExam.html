@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Payments.html">Payments</a></li>
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Questions.html">Questions</a></li>
+            <li><a href="Notifications.html">Notifications</a></li>
+        </ul>
+    </div>
+
+    <div class="grey-bar">
+        <span class="logo">TLDR</span>
+        <a href="AboutUs.html" class="button">AboutUs</a>
+        <a href="ContactUs.html" class="bottom-link">ContactUs</a>
+        <a href="signup.html" class="button signup">SignUp</a>
+        <a href="login.html" class="button login">LogIn</a>
+    </div>
+
+    <div class="topheaderr">
+        <h1>Driving School</h1>
+        <p>Passing the VORT Exam</p>
+    </div>
+
+    <div class="contentthing">
+        <h2>Welcome to the VORT Exam Preparation Website</h2>
+        <p>Prepare for your VORT exam with these essential tips and tricks:</p>
+        <br>
+        <ul>
+            <li><strong>1. Log Book :</strong> Only attempt the VORT exam if you have completed all your required driving hours.</li>
+            <li><strong>2. Driving Tips and Techniques:</strong> You should be familiar with your hand placement while driving (10 and 2).</li>
+            <li><strong>3. Parking Tutorials:</strong> Practice parking maneuvers to ace the exam.</li>
+            <li><strong>4. Maneuvers:</strong> You should be familiar with the maneuvers you are expected to do in the VORT exam.</li>
+            <li><strong>5. Road Rules:</strong> You should have a thorough understanding of the road rules.</li>
+            <br>
+            <li><strong>If you have completed all your driving hours and are confident with your driving skills, please book your VORT exam</strong></li>
+        </ul>
+    </div>
+
+    <div class="vortbooking">
+        <h2>Book VORT Exam</h2>
+        <p>Select a date for your VORT exam:</p>
+        <form id="vort-form">
+            <input type="date" id="exam-date" name="exam-date" required>
+            <br>
+            <input type="submit" value="Proceed">
+        </form>
+    </div>
+
+    <div id="confirmationpopup" class="thepopuppage">
+        <div class="contentofpopuppage">
+            <span class="close">&times;</span>
+            <h2>Confirmation</h2>
+            <p>You have selected the date: <span id="selected-date"></span>.</p>
+            <p>An examiner will be in contact with you to finalise the time and date of your VORT exam</p>
+            <p>Click <a href="Dashboard.html">here</a> to return to the dashboard.</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById("vort-form").addEventListener("submit", function (e) {
+            e.preventDefault(); 
+
+            const selectedDate = document.getElementById("exam-date").value;
+            const modal = document.getElementById("confirmationpopup");
+            const selectedDateSpan = document.getElementById("selected-date");
+
+            selectedDateSpan.textContent = selectedDate;
+
+            modal.style.display = "block";
+
+            document.querySelector(".close").addEventListener("click", function () {
+                modal.style.display = "none";
+                window.location.href = "Dashboard.html";
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                    window.location.href = "Dashboard.html";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

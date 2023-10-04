@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        
+    </style>
+</head>
+<body> 
+
+    <div class="dashboard">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="AboutUs.html">Home</a></li>
+            <li><a href="AboutUs.html">Payments</a></li>
+            <li><a href="AboutUs.html">Profile</a></li>
+            <li><a href="AboutUs.html">Questions</a></li>
+            <li><a href="AboutUs.html">Notifications</a></li>
+
+        </ul>
+    </div>
+    
+    <div class="content">
+        <div class="grey-bar">
+            <span class="logo">TLDR</span>
+            <a href="AboutUs.html" class="button">AboutUs</a>
+            <a href="ContactUs.html" class="bottom-link">ContactUs</a>
+
+        <a href="signup.html" class="button signup">SignUp</a>
+        <a href="login.html" class="button login">LogIn</a>
+    </div>
+
+        <div class="bigwhiteBoxDetails">
+            <div class="right-box">
+                <div class="qualified-driver-details">
+                    <h3>Qualified Driver Details</h3>
+                    <label for="tldr-account">Does the Qualified Driver have a TLDR account?</label>
+                    <input type="radio" id="yes" name="tldr-account" class="radio-button">
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="no" name="tldr-account" class="radio-button">
+                    <label for="no">No</label>
+                </div>
+                <div class="driver-details" id="driver-details">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name">
+                    <label for="role">Role:</label>
+                    <select id="role" name="role">
+                        <option value="Instructor">Instructor</option>
+                        <option value="Parent/Guardian">Parent/Guardian</option>
+                        <option value="Government personnel">Government personnel</option>
+                    </select>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <label for="country-of-license">Country of License:</label>
+                    <input type="text" id="country-of-license" name="country-of-license">
+                    <label for="license-no">License No:</label>
+                    <input type="text" id="license-no" name="license-no">
+                </div>
+                <div class="email-section" id="email-section">
+                    <label for="email">Email used for creating TLDR Account*</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+            </div>
+
+            <div class="logdrivedetails">
+                <h2>Log Drive Details</h2>
+                <div class="loggingthing">Date of Drive:</div>
+                <input class="log-input" type="date" id="dateOfDrive" name="dateOfDrive">
+                <div class="loggingthing">Time driven:</div>
+                <div class="log-input">
+                    <input type="text" id="startTime" name="startTime" placeholder="Start Time">
+                    <span>&nbsp;-&nbsp;</span>
+                    <input type="text" id="endTime" name="endTime" placeholder="End Time">
+                </div>
+                <div class="loggingthing">Location (Suburb):</div>
+                <div class="log-input">
+                    <input type="text" id="origin" name="origin" placeholder="Origin">
+                    <span>&nbsp;to&nbsp;</span>
+                    <input type="text" id="destination" name="destination" placeholder="Destination">
+                </div>
+                <div class="driving-condition">
+                    <div>
+                        <label for="road">Road:</label>
+                        <select id="road" class="input-field" name="road">
+                            <option value="wet">Wet</option>
+                            <option value="dry">Dry</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="weather">Weather:</label>
+                        <select id="weather" class="input-field" name="weather">
+                            <option value="rainy">Rainy</option>
+                            <option value="sunny">Sunny</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="traffic">Traffic:</label>
+                        <select id="traffic" class="input-field" name="traffic">
+                            <option value="light">Light</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="heavy">Heavy</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="loggingthing">Comments:</div>
+                <textarea class="log-input" id="comments" name="comments" rows="4"></textarea>
+            </div>
+        </div>
+        
+        <div class="agreement">
+            By logging your drive, you agree the information typed is true and approved by your Qualified Driving Instructor
+        </div>
+
+        <div class="action-buttons">
+            <button class="button">Log Entry</button>
+            <button class="button">Cancel</button>
+        </div>
+
+        <div class="bottom-bar">
+            <a href="what_link_you_wnat" class="bottom-link">2023 TLDR. All rights reserved</a>
+        </div>
+    </div>
+
+    <div id="logCompleteModel" class="model">
+        <div class="model-content">
+            <h2>Log Complete</h2>
+            <p>Your log was submitted successfully. Please wait for the instructor to sign off your log before the minutes are updated on your dashboard.</p>
+            <p>Total Time Driven: <span id="totalTimeDriven">0</span> minutes</p>
+            <button id="returnHomeButton">Return Home</button>
+            <button id="logAnotherButton">Log Another</button>
+        </div>
+    </div>
+    
+
+    <script>
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        const driverDetails = document.getElementById('driver-details');
+        const emailSection = document.getElementById('email-section');
+    
+        yesButton.addEventListener('click', () => {
+            driverDetails.style.display = 'none'; 
+            emailSection.style.display = 'block'; 
+        });
+    
+        noButton.addEventListener('click', () => {
+            driverDetails.style.display = 'block'; 
+            emailSection.style.display = 'none'; 
+        });
+    
+        const logCompleteModal = document.getElementById('logCompleteModel');
+        const returnHomeButton = document.getElementById('returnHomeButton');
+        const logAnotherButton = document.getElementById('logAnotherButton');
+        const totalTimeDriven = document.getElementById('totalTimeDriven');
+    
+        function calculateTotalMinutes(startTime, endTime) {
+            
+            const startParts = startTime.match(/^(\d{2})(\d{2})$/);
+            const endParts = endTime.match(/^(\d{2})(\d{2})$/);
+    
+            if (startParts && endParts) {
+                const startHours = parseInt(startParts[1], 10);
+                const startMinutes = parseInt(startParts[2], 10);
+                const endHours = parseInt(endParts[1], 10);
+                const endMinutes = parseInt(endParts[2], 10);
+    
+                const totalHours = endHours - startHours;
+                const totalMinutes = endMinutes - startMinutes;
+    
+                return totalHours * 60 + totalMinutes;
+            }
+    
+            return 0; 
+        }
+    
+        function validateAllFields() {
+            
+            return true; 
+        }
+    
+        const logEntryButton = document.querySelector('.action-buttons button:nth-child(1)');
+        logEntryButton.addEventListener('click', () => {
+            const allFieldsFilled = validateAllFields();
+    
+            if (allFieldsFilled) {
+                const startTime = document.getElementById('startTime').value;
+                const endTime = document.getElementById('endTime').value;
+                const totalMinutes = calculateTotalMinutes(startTime, endTime);
+                totalTimeDriven.textContent = totalMinutes;
+                logCompleteModal.style.display = 'block';
+            }
+        });
+    
+        returnHomeButton.addEventListener('click', () => {
+            window.location.href = 'dashboard.html'; 
+        });
+    
+        logAnotherButton.addEventListener('click', () => {
+            logCompleteModal.style.display = 'none';
+            const startTimeInput = document.getElementById('startTime');
+            const endTimeInput = document.getElementById('endTime');
+            const originInput = document.getElementById('origin');
+            const destinationInput = document.getElementById('destination');
+            const roadSelect = document.getElementById('road');
+            const weatherSelect = document.getElementById('weather');
+            const trafficSelect = document.getElementById('traffic');
+            const commentsTextarea = document.getElementById('comments');
+    
+            startTimeInput.value = '';
+            endTimeInput.value = '';
+            originInput.value = '';
+            destinationInput.value = '';
+            roadSelect.selectedIndex = 0; 
+            weatherSelect.selectedIndex = 0; 
+            trafficSelect.selectedIndex = 0; 
+            commentsTextarea.value = '';
+    
+            logCompleteModal.style.display = 'none';
+        });
+    </script>
+    
+</body>
+</html>
